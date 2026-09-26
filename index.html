@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PureHarvest Organics | Clean Food, Better Living</title>
+  <meta name="description" content="Shop quality organic proteins, nuts, seeds, vegetables, dairy and plant-based foods.">
+
+  <style>
+    :root{
+      --green:#245c3a;
+      --green-dark:#173f29;
+      --green-light:#edf5ee;
+      --cream:#faf8f1;
+      --text:#1d241f;
+      --muted:#6d756f;
+      --white:#fff;
+      --border:#e5e8e3;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:auto;
+      padding:0 20px;
+    }
+
+    /* TOP BAR */
+
+    .topbar{
+      background:var(--green-dark);
+      color:#fff;
+      text-align:center;
+      padding:8px 15px;
+      font-size:12px;
+    }
+
+    /* HEADER */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
+
+    .navbar{
+      height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:800;
+      color:var(--green-dark);
+      letter-spacing:-1px;
+      white-space:nowrap;
+    }
+
+    .logo span{
+      color:#8a9b55;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .nav-links a:hover{
+      color:var(--green);
+    }
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .cart{
+      border:1px solid var(--green);
+      color:var(--green);
+      padding:9px 15px;
+      border-radius:6px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    /* HERO */
+
+    .hero{
+      background:var(--cream);
+    }
+
+    .hero-inner{
+      min-height:570px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:55px;
+      padding-top:65px;
+      padding-bottom:65px;
+    }
+
+    .eyebrow{
+      color:var(--green);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:14px;
+    }
+
+    .hero h1{
+      font-size:clamp(42px,6vw,70px);
+      line-height:1.02;
+      letter-spacing:-3px;
+      max-width:620px;
+      margin-bottom:22px;
+    }
+
+    .hero h1 span{
+      color:var(--green);
+    }
+
+    .hero-text{
+      color:var(--muted);
+      font-size:17px;
+      max-width:510px;
+      margin-bottom:30px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 22px;
+      border-radius:6px;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .btn-primary{
+      background:var(--green);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:var(--green-dark);
+    }
+
+    .btn-secondary{
+      border:1px solid #b8c0b9;
+      background:#fff;
+    }
+
+    .hero-image{
+      height:450px;
+      overflow:hidden;
+      border-radius:12px;
+      background:#e9eee7;
+    }
+
+    .hero-image img{
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* BENEFITS */
+
+    .benefits{
+      border-bottom:1px solid var(--border);
+    }
+
+    .benefit-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .benefit{
+      padding:25px 18px;
+      text-align:center;
+      border-right:1px solid var(--border);
+    }
+
+    .benefit:last-child{
+      border-right:0;
+    }
+
+    .benefit strong{
+      display:block;
+      font-size:14px;
+      margin-bottom:4px;
+    }
+
+    .benefit span{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* SECTION */
+
+    .section{
+      padding:80px 0;
+    }
+
+    .section-heading{
+      text-align:center;
+      margin-bottom:38px;
+    }
+
+    .section-heading h2{
+      font-size:34px;
+      letter-spacing:-1px;
+      margin-bottom:6px;
+    }
+
+    .section-heading p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* CATEGORIES */
+
+    .categories{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .category{
+      position:relative;
+      height:330px;
+      overflow:hidden;
+      border-radius:10px;
+      background:#eee;
+    }
+
+    .category img{
+      height:100%;
+      object-fit:cover;
+      transition:.35s;
+    }
+
+    .category:hover img{
+      transform:scale(1.04);
+    }
+
+    .category-info{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      padding:50px 20px 20px;
+      color:#fff;
+      background:linear-gradient(transparent,rgba(0,0,0,.78));
+    }
+
+    .category-info h3{
+      font-size:22px;
+      margin-bottom:4px;
+    }
+
+    .category-info span{
+      font-size:12px;
+      text-decoration:underline;
+      font-weight:700;
+    }
+
+    /* PRODUCTS */
+
+    .product-toolbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:25px;
+    }
+
+    .product-count{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+    }
+
+    .product{
+      position:relative;
+    }
+
+    .product-image{
+      height:300px;
+      overflow:hidden;
+      border-radius:9px;
+      background:#f2f4f0;
+      margin-bottom:14px;
+    }
+
+    .product-image img{
+      height:100%;
+      object-fit:cover;
+      transition:.3s;
+    }
+
+    .product:hover .product-image img{
+      transform:scale(1.03);
+    }
+
+    .tag{
+      position:absolute;
+      top:12px;
+      left:12px;
+      background:#fff;
+      color:var(--green);
+      padding:5px 8px;
+      border-radius:4px;
+      font-size:10px;
+      font-weight:800;
+      z-index:2;
+    }
+
+    .product-category{
+      color:#788078;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:1px;
+      margin-bottom:3px;
+    }
+
+    .product-name{
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+
+    .product-description{
+      color:var(--muted);
+      font-size:12px;
+      min-height:38px;
+      margin-bottom:7px;
+    }
+
+    .price{
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .order-link{
+      display:inline-block;
+      margin-top:10px;
+      color:var(--green);
+      font-size:12px;
+      font-weight:700;
+      text-decoration:underline;
+    }
+
+    /* STORY BANNER */
+
+    .story{
+      background:var(--green-light);
+    }
+
+    .story-inner{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:55px;
+    }
+
+    .story-image{
+      height:390px;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    .story-image img{
+      height:100%;
+      object-fit:cover;
+    }
+
+    .story-text h2{
+      font-size:38px;
+      line-height:1.1;
+      margin-bottom:17px;
+    }
+
+    .story-text p{
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:22px;
+    }
+
+    .check-list{
+      list-style:none;
+      margin-bottom:25px;
+    }
+
+    .check-list li{
+      margin-bottom:9px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .check-list li::before{
+      content:"✓";
+      color:var(--green);
+      font-weight:900;
+      margin-right:9px;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter{
+      text-align:center;
+      padding:75px 20px;
+    }
+
+    .newsletter h2{
+      font-size:32px;
+      margin-bottom:8px;
+    }
+
+    .newsletter p{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+
+    .newsletter-form{
+      max-width:480px;
+      margin:auto;
+      display:flex;
+      gap:8px;
+    }
+
+    .newsletter-form input{
+      flex:1;
+      min-width:0;
+      border:1px solid #ccd2cc;
+      border-radius:6px;
+      padding:13px;
+      font-size:14px;
+    }
+
+    .newsletter-form button{
+      border:0;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#17271d;
+      color:#fff;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:45px;
+      padding-top:60px;
+      padding-bottom:55px;
+    }
+
+    .footer-logo{
+      font-size:24px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    .footer-grid p{
+      color:#aeb8b0;
+      font-size:13px;
+      max-width:330px;
+    }
+
+    .footer-column h4{
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    .footer-column a{
+      display:block;
+      color:#aeb8b0;
+      font-size:13px;
+      margin-bottom:8px;
+    }
+
+    .footer-column a:hover{
+      color:#fff;
+    }
+
+    .copyright{
+      border-top:1px solid #344339;
+      padding:18px 20px;
+      text-align:center;
+      color:#8f9b92;
+      font-size:11px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+      .nav-links{display:none}
+
+      .hero-inner{
+        grid-template-columns:1fr;
+        padding-top:50px;
+      }
+
+      .hero-image{
+        height:390px;
+      }
+
+      .categories{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .products{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .benefit-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .benefit:nth-child(2){
+        border-right:0;
+      }
+
+      .benefit:nth-child(-n+2){
+        border-bottom:1px solid var(--border);
+      }
+
+      .story-inner{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:560px){
+      .navbar{
+        height:65px;
+      }
+
+      .logo{
+        font-size:21px;
+      }
+
+      .cart{
+        padding:8px 11px;
+      }
+
+      .hero h1{
+        font-size:46px;
+      }
+
+      .hero-image{
+        height:320px;
+      }
+
+      .section{
+        padding:60px 0;
+      }
+
+      .categories,
+      .products{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+      }
+
+      .category{
+        height:250px;
+      }
+
+      .category-info{
+        padding:35px 13px 13px;
+      }
+
+      .category-info h3{
+        font-size:18px;
+      }
+
+      .category-info span{
+        font-size:10px;
+      }
+
+      .product-image{
+        height:210px;
+      }
+
+      .product-description{
+        min-height:auto;
+      }
+
+      .story-text h2{
+        font-size:31px;
+      }
+
+      .newsletter-form{
+        flex-direction:column;
+      }
+
+      .newsletter-form button{
+        width:100%;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Change "PureHarvest Organics" to your actual brand name -->
+
+  <div class="topbar">
+    Free delivery on qualifying orders • 100% satisfaction focused
+  </div>
+
+  <header>
+    <div class="container navbar">
+
+      <a href="#" class="logo">
+        PureHarvest <span>Organics</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="#shop" class="cart">View Shop</a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container hero-inner">
+
+      <div>
+        <div class="eyebrow">CLEAN • SIMPLE • ORGANIC</div>
+
+        <h1>
+          Better food for a
+          <span>better everyday.</span>
+        </h1>
+
+        <p class="hero-text">
+          Shop carefully selected proteins, nuts, seeds, vegetables,
+          dairy and plant-based foods for a cleaner, more nourishing
+          kitchen.
+        </p>
+
+        <div class="buttons">
+          <a href="#shop" class="btn btn-primary">
+            Shop Organic Foods
+          </a>
+
+          <a href="#categories" class="btn btn-secondary">
+            Browse Categories
+          </a>
+        </div>
+      </div>
+
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1100&q=85"
+          alt="Fresh organic vegetables and food"
+        >
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- BENEFITS -->
+
+  <section class="benefits">
+    <div class="container benefit-grid">
+
+      <div class="benefit">
+        <strong>Quality First</strong>
+        <span>Carefully selected foods</span>
+      </div>
+
+      <div class="benefit">
+        <strong>Fresh Selection</strong>
+        <span>Fresh food for your kitchen</span>
+      </div>
+
+      <div class="benefit">
+        <strong>Easy Ordering</strong>
+        <span>Simple online shopping</span>
+      </div>
+
+      <div class="benefit">
+        <strong>Secure Checkout</strong>
+        <span>Safe and convenient</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CATEGORIES -->
+
+  <section class="section" id="categories">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Shop by Category</h2>
+        <p>Choose from our carefully selected food categories.</p>
+      </div>
+
+      <div class="categories">
+
+        <a href="#shop" class="category">
+          <img
+            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=85"
+            alt="Organic proteins"
+          >
+          <div class="category-info">
+            <h3>Proteins</h3>
+            <span>Shop Proteins →</span>
+          </div>
+        </a>
+
+        <a href="#shop" class="category">
+          <img
+            src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=800&q=85"
+            alt="Organic nuts and seeds"
+          >
+          <div class="category-info">
+            <h3>Nuts & Seeds</h3>
+            <span>Shop Nuts & Seeds →</span>
+          </div>
+        </a>
+
+        <a href="#shop" class="category">
+          <img
+            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=85"
+            alt="Fresh organic vegetables"
+          >
+          <div class="category-info">
+            <h3>Vegetables</h3>
+            <span>Shop Vegetables →</span>
+          </div>
+        </a>
+
+        <a href="#shop" class="category">
+          <img
+            src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=85"
+            alt="Organic dairy and dairy alternatives"
+          >
+          <div class="category-info">
+            <h3>Dairy & Alternatives</h3>
+            <span>Shop Dairy →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PRODUCTS -->
+
+  <section class="section" id="shop" style="padding-top:20px;">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Featured Foods</h2>
+        <p>Some of our popular organic food choices.</p>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <span class="tag">POPULAR</span>
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=700&q=85"
+              alt="Grass-fed beef"
+            >
+          </div>
+          <div class="product-category">PROTEIN</div>
+          <div class="product-name">Organic Grass-Fed Beef</div>
+          <div class="product-description">
+            Quality beef sourced from pasture-raised cattle.
+          </div>
+          <div class="price">৳ 1,200 / kg</div>
+          <a href="#contact" class="order-link">Order Now →</a>
+        </article>
+
+
+        <article class="product">
+          <span class="tag">OMEGA-3</span>
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=700&q=85"
+              alt="Wild-caught salmon"
+            >
+          </div>
+          <div class="product-category">PROTEIN</div>
+          <div class="product-name">Wild-Caught Salmon</div>
+          <div class="product-description">
+            A rich source of omega-3 fatty acids.
+          </div>
+          <div class="price">৳ 1,800 / kg</div>
+          <a href="#contact" class="order-link">Order Now →</a>
+        </article>
+
+
+        <article class="product">
+          <span class="tag">PLANT BASED</span>
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=85"
+              alt="Fresh organic vegetables"
+            >
+          </div>
+          <div class="product-category">VEGETABLES</div>
+          <div class="product-name">Fresh Organic Greens</div>
+          <div class="product-description">
+            Fresh vegetables selected for your everyday meals.
+          </div>
+          <div class="price">৳ 350 / pack</div>
+          <a href="#contact" class="order-link">Order Now →</a>
+        </article>
+
+
+        <article class="product">
+          <span class="tag">HIGH PROTEIN</span>
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=85"
+              alt="Organic Greek yogurt"
+            >
+          </div>
+          <div class="product-category">DAIRY</div>
+          <div class="product-name">Organic Greek Yogurt</div>
+          <div class="product-description">
+            Thick, creamy yogurt made from organic milk.
+          </div>
+          <div class="price">৳ 450 / tub</div>
+          <a href="#contact" class="order-link">Order Now →</a>
+        </article>
+
+
+        <article class="product">
+          <span class="tag">SNACK</span>
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=700&q=85"
+              alt="Walnuts"
+            >
+          </div>
+          <div class="product-category">NUTS & SEEDS</div>
+          <div class="product-name">Premium Walnuts</div>
+          <div class="product-description">
+            A delicious source of plant-based omega-3 fats.
+          </div>
+          <div class="price">৳ 650 / 500g</div>
+          <a href="#contact" class="order-link">Order Now →</a>
+        </article>
+
+
+        <article class="product">
+          <span class="tag">FIBER RICH</span>
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?auto=format&fit=crop&w=700&q=85"
+              alt="Chia seeds"
+            >
+          </div>
+          <div class="product-category">NUTS & SEEDS</div>
+          <div class="product-name">Organic Chia Seeds</div>
+          <div class="product-description">
+            Packed with fiber, healthy fats and minerals.
+          </div>
+          <div class="price">৳ 480 / 500g</div>
+          <a href="#contact" class="order-link">Order Now →</a>
+        </article>
+
+
+        <article class="product">
+          <span class="tag">MINERAL RICH</span>
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=700&q=85"
+              alt="Pumpkin seeds"
+            >
+          </div>
+          <div class="product-category">NUTS & SEEDS</div>
+          <div class="product-name">Pumpkin Seeds</div>
+          <div class="product-description">
+            A nutrient-rich seed containing magnesium and zinc.
+          </div>
+          <div class="price">৳ 520 / 500g</div>
+          <a href="#contact" class="order-link">Order Now →</a>
+        </article>
+
+
+        <article class="product">
+          <span class="tag">PLANT BASED</span>
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=85"
+              alt="Organic tofu and tempeh"
+            >
+          </div>
+          <div class="product-category">PLANT PROTEIN</div>
+          <div class="product-name">Organic Tofu / Tempeh</div>
+          <div class="product-description">
+            Plant-based protein made from non-GMO soybeans.
+          </div>
+          <div class="price">৳ 380 / pack</div>
+          <a href="#contact" class="order-link">Order Now →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STORY -->
+
+  <section class="story" id="about">
+    <div class="container section story-inner">
+
+      <div class="story-image">
+        <img
+          src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1000&q=85"
+          alt="Fresh healthy organic food"
+        >
+      </div>
+
+      <div class="story-text">
+
+        <div class="eyebrow">
+          WHY PUREHARVEST
+        </div>
+
+        <h2>
+          Food you can feel good about putting on your table.
+        </h2>
+
+        <p>
+          We focus on carefully selected ingredients and simple,
+          wholesome food choices. Our collection brings together
+          quality proteins, nutrient-rich plants, nuts, seeds and
+          dairy alternatives in one convenient place.
+        </p>
+
+        <ul class="check-list">
+          <li>Carefully selected ingredients</li>
+          <li>Organic and plant-based options</li>
+          <li>Convenient online ordering</li>
+          <li>Quality-focused food selection</li>
+        </ul>
+
+        <a href="#shop" class="btn btn-primary">
+          Explore Foods
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- NEWSLETTER -->
+
+  <section class="newsletter">
+
+    <div class="container">
+
+      <h2>Get fresh food updates</h2>
+
+      <p>
+        Subscribe for new products, offers and healthy food inspiration.
+      </p>
+
+      <form class="newsletter-form" onsubmit="return subscribeMessage(event)">
+        <input
+          type="email"
+          placeholder="Your email address"
+          required
+        >
+
+        <button class="btn btn-primary" type="submit">
+          Subscribe
+        </button>
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer id="contact">
+
+    <div class="container footer-grid">
+
+      <div>
+        <div class="footer-logo">
+          PureHarvest Organics
+        </div>
+
+        <p>
+          Quality-focused organic and wholesome foods for
+          everyday living.
+        </p>
+      </div>
+
+
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <a href="#shop">Proteins</a>
+        <a href="#shop">Nuts & Seeds</a>
+        <a href="#shop">Vegetables</a>
+        <a href="#shop">Dairy & Alternatives</a>
+      </div>
+
+
+      <div class="footer-column">
+        <h4>Company</h4>
+        <a href="#about">Our Story</a>
+        <a href="#categories">Categories</a>
+        <a href="#shop">Products</a>
+      </div>
+
+
+      <div class="footer-column">
+        <h4>Contact</h4>
+
+        <!-- Replace with your actual contact information -->
+
+        <a href="tel:+8801000000000">
+          +880 1000-000000
+        </a>
+
+        <a href="mailto:hello@pureharvest.com">
+          hello@pureharvest.com
+        </a>
+
+        <a href="#">
+          Facebook
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 PureHarvest Organics. All Rights Reserved.
+    </div>
+
+  </footer>
+
+
+  <script>
+    function subscribeMessage(event) {
+      event.preventDefault();
+      alert("Thank you for subscribing!");
+      return false;
+    }
+  </script>
+
+</body>
+</html>
