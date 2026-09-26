@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop | PureHarvest Organics</title>
+  <meta name="description" content="Shop all organic proteins, nuts, seeds, vegetables, dairy and plant-based foods from PureHarvest Organics.">
+
+  <style>
+    :root{
+      --green:#245c3a;
+      --green-dark:#173f29;
+      --green-light:#edf5ee;
+      --cream:#faf8f1;
+      --text:#1d241f;
+      --muted:#6d756f;
+      --border:#e5e8e3;
+      --white:#fff;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:auto;
+      padding:0 20px;
+    }
+
+    /* TOP BAR */
+
+    .topbar{
+      background:var(--green-dark);
+      color:#fff;
+      text-align:center;
+      padding:8px 15px;
+      font-size:12px;
+    }
+
+    /* HEADER */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
+
+    .navbar{
+      height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:800;
+      color:var(--green-dark);
+      letter-spacing:-1px;
+      white-space:nowrap;
+    }
+
+    .logo span{
+      color:#8a9b55;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active{
+      color:var(--green);
+    }
+
+    .home-button{
+      border:1px solid var(--green);
+      color:var(--green);
+      padding:9px 15px;
+      border-radius:6px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    /* SHOP HERO */
+
+    .shop-hero{
+      background:var(--cream);
+      text-align:center;
+      padding:65px 20px;
+    }
+
+    .eyebrow{
+      color:var(--green);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:10px;
+    }
+
+    .shop-hero h1{
+      font-size:52px;
+      line-height:1.05;
+      letter-spacing:-2px;
+      margin-bottom:14px;
+    }
+
+    .shop-hero p{
+      max-width:650px;
+      margin:auto;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    /* FILTERS */
+
+    .filter-section{
+      padding:30px 0 10px;
+    }
+
+    .filters{
+      display:flex;
+      justify-content:center;
+      gap:9px;
+      flex-wrap:wrap;
+    }
+
+    .filter-btn{
+      border:1px solid #d5dbd5;
+      background:#fff;
+      color:var(--text);
+      padding:9px 15px;
+      border-radius:5px;
+      cursor:pointer;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active{
+      background:var(--green);
+      color:#fff;
+      border-color:var(--green);
+    }
+
+    /* PRODUCTS */
+
+    .store{
+      padding:45px 0 90px;
+    }
+
+    .store-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:28px;
+    }
+
+    .store-top h2{
+      font-size:27px;
+    }
+
+    .product-count{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:30px 20px;
+    }
+
+    .product{
+      position:relative;
+    }
+
+    .product-image{
+      height:290px;
+      overflow:hidden;
+      border-radius:9px;
+      background:#f2f4f0;
+      margin-bottom:14px;
+    }
+
+    .product-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:.3s ease;
+    }
+
+    .product:hover .product-image img{
+      transform:scale(1.035);
+    }
+
+    .tag{
+      position:absolute;
+      top:12px;
+      left:12px;
+      z-index:2;
+      background:#fff;
+      color:var(--green);
+      padding:5px 8px;
+      border-radius:4px;
+      font-size:9px;
+      font-weight:800;
+      letter-spacing:.4px;
+    }
+
+    .product-category{
+      color:#788078;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:1px;
+      margin-bottom:3px;
+    }
+
+    .product-name{
+      font-size:16px;
+      font-weight:700;
+      margin-bottom:5px;
+    }
+
+    .product-description{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.5;
+      min-height:55px;
+    }
+
+    .product-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .price{
+      font-size:15px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .order-btn{
+      display:inline-block;
+      background:var(--green);
+      color:#fff;
+      padding:7px 10px;
+      border-radius:5px;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .order-btn:hover{
+      background:var(--green-dark);
+    }
+
+    /* NO RESULTS */
+
+    .no-results{
+      display:none;
+      text-align:center;
+      padding:50px 20px;
+      color:var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#17271d;
+      color:#fff;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:45px;
+      padding-top:60px;
+      padding-bottom:55px;
+    }
+
+    .footer-logo{
+      font-size:24px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    .footer-grid p{
+      color:#aeb8b0;
+      font-size:13px;
+      max-width:330px;
+    }
+
+    .footer-column h4{
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    .footer-column a{
+      display:block;
+      color:#aeb8b0;
+      font-size:13px;
+      margin-bottom:8px;
+    }
+
+    .footer-column a:hover{
+      color:#fff;
+    }
+
+    .copyright{
+      border-top:1px solid #344339;
+      padding:18px 20px;
+      text-align:center;
+      color:#8f9b92;
+      font-size:11px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+      .nav-links{
+        display:none;
+      }
+
+      .products{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:560px){
+      .navbar{
+        height:65px;
+      }
+
+      .logo{
+        font-size:21px;
+      }
+
+      .shop-hero{
+        padding:50px 15px;
+      }
+
+      .shop-hero h1{
+        font-size:43px;
+      }
+
+      .products{
+        grid-template-columns:1fr 1fr;
+        gap:25px 12px;
+      }
+
+      .product-image{
+        height:205px;
+      }
+
+      .product-name{
+        font-size:14px;
+      }
+
+      .product-description{
+        min-height:auto;
+      }
+
+      .product-bottom{
+        display:block;
+      }
+
+      .order-btn{
+        margin-top:8px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Quality-focused organic foods • Simple online shopping
+  </div>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="index.html" class="logo">
+        PureHarvest <span>Organics</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="index.html#about">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="index.html" class="home-button">
+        Back Home
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- SHOP HERO -->
+
+  <section class="shop-hero">
+
+    <div class="eyebrow">
+      PUREHARVEST ORGANICS
+    </div>
+
+    <h1>Shop All Foods</h1>
+
+    <p>
+      Explore our complete collection of carefully selected proteins,
+      nuts, seeds, vegetables, dairy and plant-based foods.
+    </p>
+
+  </section>
+
+
+  <!-- CATEGORY FILTER -->
+
+  <section class="filter-section">
+
+    <div class="container">
+
+      <div class="filters">
+
+        <button class="filter-btn active" data-filter="all">
+          All Products
+        </button>
+
+        <button class="filter-btn" data-filter="protein">
+          Proteins
+        </button>
+
+        <button class="filter-btn" data-filter="nuts">
+          Nuts & Seeds
+        </button>
+
+        <button class="filter-btn" data-filter="vegetables">
+          Vegetables
+        </button>
+
+        <button class="filter-btn" data-filter="dairy">
+          Dairy & Alternatives
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ALL PRODUCTS -->
+
+  <section class="store">
+
+    <div class="container">
+
+      <div class="store-top">
+
+        <h2>All Products</h2>
+
+        <div class="product-count">
+          <span id="count">14</span> products
+        </div>
+
+      </div>
+
+
+      <div class="products" id="products">
+
+
+        <!-- 01 BEEF -->
+
+        <article class="product" data-category="protein">
+
+          <span class="tag">ORGANIC</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=800&q=85"
+              alt="Organic grass-fed beef"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">PROTEIN</div>
+
+          <div class="product-name">
+            Organic Grass-Fed Beef
+          </div>
+
+          <div class="product-description">
+            Beef sourced from cattle raised on pasture without
+            synthetic hormones or antibiotics.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 1,200 / kg</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 02 TURKEY -->
+
+        <article class="product" data-category="protein">
+
+          <span class="tag">LEAN PROTEIN</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=85"
+              alt="Organic turkey breast"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">PROTEIN</div>
+
+          <div class="product-name">
+            Organic Turkey Breast
+          </div>
+
+          <div class="product-description">
+            A lean poultry protein option with a mild,
+            versatile flavor.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 950 / kg</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 03 SALMON -->
+
+        <article class="product" data-category="protein">
+
+          <span class="tag">OMEGA-3</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=85"
+              alt="Organic wild-caught salmon"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">PROTEIN</div>
+
+          <div class="product-name">
+            Organic Wild-Caught Salmon
+          </div>
+
+          <div class="product-description">
+            Rich in omega-3 fatty acids and ideal for
+            balanced meals.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 1,800 / kg</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 04 TOFU -->
+
+        <article class="product" data-category="protein">
+
+          <span class="tag">PLANT BASED</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+              alt="Organic tofu and tempeh"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">PLANT PROTEIN</div>
+
+          <div class="product-name">
+            Organic Tofu / Tempeh
+          </div>
+
+          <div class="product-description">
+            Plant-based protein made from certified organic,
+            non-GMO soybeans.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 380 / pack</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 05 WALNUTS -->
+
+        <article class="product" data-category="nuts">
+
+          <span class="tag">OMEGA-3</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?auto=format&fit=crop&w=800&q=85"
+              alt="Organic walnuts"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">NUTS & SEEDS</div>
+
+          <div class="product-name">
+            Organic Walnuts
+          </div>
+
+          <div class="product-description">
+            A delicious source of plant-based omega-3
+            fatty acids.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 650 / 500g</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 06 PISTACHIOS -->
+
+        <article class="product" data-category="nuts">
+
+          <span class="tag">SNACK</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?auto=format&fit=crop&w=800&q=85"
+              alt="Organic pistachios"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">NUTS & SEEDS</div>
+
+          <div class="product-name">
+            Organic Pistachios
+          </div>
+
+          <div class="product-description">
+            Crunchy pistachios naturally rich in antioxidants
+            and perfect for snacking.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 750 / 500g</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 07 CHIA -->
+
+        <article class="product" data-category="nuts">
+
+          <span class="tag">FIBER RICH</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=800&q=85"
+              alt="Organic chia seeds"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">NUTS & SEEDS</div>
+
+          <div class="product-name">
+            Organic Chia Seeds
+          </div>
+
+          <div class="product-description">
+            Nutrient-dense seeds packed with fiber, calcium
+            and healthy fats.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 480 / 500g</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 08 PUMPKIN -->
+
+        <article class="product" data-category="nuts">
+
+          <span class="tag">MINERAL RICH</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1604908177522-402e8a3d3f56?auto=format&fit=crop&w=800&q=85"
+              alt="Organic pumpkin seeds"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">NUTS & SEEDS</div>
+
+          <div class="product-name">
+            Organic Pumpkin Seeds
+          </div>
+
+          <div class="product-description">
+            Nutrient-rich seeds containing magnesium and zinc.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 520 / 500g</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 09 BROCCOLI -->
+
+        <article class="product" data-category="vegetables">
+
+          <span class="tag">FRESH</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=800&q=85"
+              alt="Organic broccoli"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">VEGETABLES</div>
+
+          <div class="product-name">
+            Organic Broccoli
+          </div>
+
+          <div class="product-description">
+            A fresh cruciferous vegetable naturally rich in
+            vitamin C and fiber.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 280 / kg</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 10 SPINACH -->
+
+        <article class="product" data-category="vegetables">
+
+          <span class="tag">FRESH</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=800&q=85"
+              alt="Organic spinach"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">VEGETABLES</div>
+
+          <div class="product-name">
+            Organic Spinach
+          </div>
+
+          <div class="product-description">
+            Nutrient-dense leafy greens containing iron
+            and folate.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 180 / bunch</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 11 SWEET POTATO -->
+
+        <article class="product" data-category="vegetables">
+
+          <span class="tag">WHOLESOME</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1596097635121-14b38c5e9e38?auto=format&fit=crop&w=800&q=85"
+              alt="Organic sweet potatoes"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">VEGETABLES</div>
+
+          <div class="product-name">
+            Organic Sweet Potatoes
+          </div>
+
+          <div class="product-description">
+            A wholesome complex carbohydrate rich in
+            beta-carotene.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 220 / kg</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 12 AVOCADO -->
+
+        <article class="product" data-category="vegetables">
+
+          <span class="tag">HEALTHY FATS</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=800&q=85"
+              alt="Organic avocado"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">VEGETABLES</div>
+
+          <div class="product-name">
+            Organic Avocado
+          </div>
+
+          <div class="product-description">
+            Creamy avocado providing heart-healthy
+            monounsaturated fats.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 180 / piece</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 13 GREEK YOGURT -->
+
+        <article class="product" data-category="dairy">
+
+          <span class="tag">HIGH PROTEIN</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=85"
+              alt="Organic strained Greek yogurt"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">DAIRY</div>
+
+          <div class="product-name">
+            Organic Strained Greek Yogurt
+          </div>
+
+          <div class="product-description">
+            Thick, creamy and protein-rich yogurt made from
+            organic milk.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 450 / tub</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+        <!-- 14 CASHEW MILK / YOGURT -->
+
+        <article class="product" data-category="dairy">
+
+          <span class="tag">DAIRY FREE</span>
+
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=85"
+              alt="Organic cashew milk and cashew yogurt"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="product-category">DAIRY ALTERNATIVE</div>
+
+          <div class="product-name">
+            Organic Cashew Milk / Yogurt
+          </div>
+
+          <div class="product-description">
+            Plant-based, dairy-free alternatives made from
+            organic cashews.
+          </div>
+
+          <div class="product-bottom">
+            <div class="price">৳ 420 / pack</div>
+            <a href="#contact" class="order-btn">Order Now</a>
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <div class="no-results" id="noResults">
+        No products found in this category.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer id="contact">
+
+    <div class="container footer-grid">
+
+      <div>
+        <div class="footer-logo">
+          PureHarvest Organics
+        </div>
+
+        <p>
+          Quality-focused organic and wholesome foods for
+          everyday living.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <a href="shop.html">All Products</a>
+        <a href="#" data-footer-filter="protein">Proteins</a>
+        <a href="#" data-footer-filter="nuts">Nuts & Seeds</a>
+        <a href="#" data-footer-filter="vegetables">Vegetables</a>
+        <a href="#" data-footer-filter="dairy">Dairy & Alternatives</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">Our Story</a>
+        <a href="index.html#categories">Categories</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contact</h4>
+
+        <!-- Replace these with your actual contact details -->
+
+        <a href="tel:+8801000000000">
+          +880 1000-000000
+        </a>
+
+        <a href="mailto:hello@pureharvest.com">
+          hello@pureharvest.com
+        </a>
+
+        <a href="#">
+          Facebook
+        </a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 PureHarvest Organics. All Rights Reserved.
+    </div>
+
+  </footer>
+
+
+  <!-- FILTER SCRIPT -->
+
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const products = document.querySelectorAll(".product");
+    const count = document.getElementById("count");
+    const noResults = document.getElementById("noResults");
+
+    function filterProducts(category) {
+      let visibleProducts = 0;
+
+      products.forEach(product => {
+        const productCategory = product.dataset.category;
+
+        if (category === "all" || productCategory === category) {
+          product.style.display = "";
+          visibleProducts++;
+        } else {
+          product.style.display = "none";
+        }
+      });
+
+      count.textContent = visibleProducts;
+      noResults.style.display = visibleProducts === 0 ? "block" : "none";
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        filterProducts(button.dataset.filter);
+      });
+    });
+
+    document.querySelectorAll("[data-footer-filter]").forEach(link => {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const category = this.dataset.footerFilter;
+
+        filterButtons.forEach(button => {
+          button.classList.toggle(
+            "active",
+            button.dataset.filter === category
+          );
+        });
+
+        filterProducts(category);
+
+        window.scrollTo({
+          top: document.querySelector(".store").offsetTop - 80,
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
